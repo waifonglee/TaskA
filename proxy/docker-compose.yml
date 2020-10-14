@@ -1,0 +1,17 @@
+version: '2'
+services:
+  proxy:
+    build: ./
+    networks:
+      - service1
+      - service2
+    ports:
+      - 80:80
+
+networks:
+  service1:
+    external:
+      name: service1_default
+  service2:
+    external:
+      name: service2_default
